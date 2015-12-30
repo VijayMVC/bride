@@ -1,0 +1,60 @@
+/* Style for topbar ==============================
+===================================================*/
+
+.topBar {
+	@extend %textAlignCenter;
+	.logo {
+		display: inline-block;
+		width: 170px;
+		height: 120px;
+		padding: 10px;
+	}
+	.mainMenu {
+		@extend %bgColorMain;
+		margin-bottom: 15px;
+
+		li {
+			display: inline-block;
+			width: 20%;
+			a {
+				display: block;
+				@extend %fontColorMain;
+				@extend %textDecorNone;
+				padding: 10px 15px;
+				font-size: 18px;
+				
+				&:hover, &:focus {
+					@extend %textDecorNone;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.topBar {
+		.mainMenu {
+			position: absolute;
+			width: 250px;
+			left: -100%;
+			top: 0;
+			height: 100%;
+			li {
+				display: block;
+				width: 100%;
+				a {
+					text-align: left;
+				}
+			}
+		}
+	}
+	.offCanvas {
+		&.out {
+			.topBar {
+				.mainMenu {
+					left: 0;
+				}
+			}
+		}
+	}
+}

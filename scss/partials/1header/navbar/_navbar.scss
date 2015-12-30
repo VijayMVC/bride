@@ -1,0 +1,109 @@
+/* Style for navbar ==============================
+===================================================*/
+
+.content {
+	@extend %textAlignCenter;
+	padding: 0;
+}
+.formContainer {
+	@extend %bgColorMain;
+	margin-bottom: 15px;
+
+	.toggleMenu {
+		display: none;
+		@extend %transitionAll;
+	}
+	.searchForm {
+		display: inline-block;
+		@extend %bgColorMain;
+	}
+	.searchToggle {
+		display: none;
+	}
+	.logoMobile {
+		display: none;
+		width: 100px;
+		height: 60px;
+		padding: 10px;
+	}
+}
+
+.contentSectionLeft {
+	@extend %textAlignCenter;
+	.imageContainer {
+		display: block;
+		padding: 15px;
+		width: 80%;
+		margin: 0 auto;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	p {
+		@extend %textAlignLeft;
+		font-size: 16px;
+	}
+}
+.contentSectionRight {
+	p {
+		@extend %textAlignLeft;
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+	.offCanvas {
+		&.out {
+			.content {
+				position: relative;
+				padding-left: 15px;
+				top: 0;
+				left: 250px;
+			}
+		}
+	}
+	.formContainer {
+		&.open {
+			.searchForm {
+				display: block;
+			}
+		}
+		.navbar-form {
+			margin: 0;
+		}
+		position: relative;
+		padding: 5px 10px;
+		.toggleMenu {
+			display: block;
+			margin-top: 15px;
+		}
+		.searchForm {
+			display: none;
+			width: 100%;
+			padding: 10px 0;
+			.form-group {
+				margin-bottom: 0;
+			}
+			input {
+				display: inline-block;
+				width: 70%;
+			}
+			.search {
+				width: auto;
+				margin-left: 20px;
+			}
+
+		}
+		.searchToggle {
+			display: block;
+			margin-top: 15px;
+		}
+		.logoMobile {
+			display: inline-block;
+		}
+	}
+	.contentSectionLeft {
+		padding: 10px 15px;
+	}
+}
